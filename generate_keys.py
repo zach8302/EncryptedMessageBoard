@@ -1,8 +1,8 @@
 import random
 
 def generate_key():
-    x = random.randrange(80, 120)
-    y = random.randrange(x, 120)
+    x = random.randrange(150, 300)
+    y = random.randrange(x, 300)
     primes = get_primes(x, y)
     p, q = primes[0], primes[1]
     e = gen_rel_prime(p - 1, q - 1)
