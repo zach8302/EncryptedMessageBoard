@@ -9,6 +9,7 @@ def main():
     read_public_keys()
     read_messages()
 
+    print("Enter help for a list of commands")
     while True:
         print("Please Enter a Command:")
         command = input()
@@ -20,6 +21,8 @@ def main():
             decode()
         elif command == "inbox":
             inbox()
+        elif command == "help":
+            print("keygen: generate a private public key pair\nsend: send an encrypted message\ndecode: decode an encrypted message\ninbox: view your messages")
         else:
             print("Invalid Command")
         print("\n")
