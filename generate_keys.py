@@ -1,12 +1,15 @@
 import random
 
 def generate_key():
-    x = random.randrange(150, 300)
-    y = random.randrange(x, 300)
+    x = random.randrange(120, 220)
+    y = random.randrange(x, 220)
     primes = get_primes(x, y)
     p, q = primes[0], primes[1]
     e = gen_rel_prime(p - 1, q - 1)
-    d = pow(e, -1, ((p - 1) * (q - 1)))
+    try :
+        d = pow(e, -1, ((p - 1) * (q - 1)))
+    except ValueError :
+        return generate_key()
     N = primes[0] * primes[1]
     return(d, (N, e))
 
