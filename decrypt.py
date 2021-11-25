@@ -4,7 +4,7 @@ def decrypt(encrypted, public_key, private_key):
     while encrypted > 0:
         part = encrypted % 10000000
         part %= N
-        num = (part ** private_key) % N
+        num = pow(part, private_key, N)
         s = to_str(num) + s
         encrypted //= 10000000
     return s
